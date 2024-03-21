@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <title>Convict Leasing &amp; Slavery</title>
+    <link rel="icon" href="images/gadoc_logo.png" type="image/png"> <!--Image taken from the Georgia Department of Corrections Account on X-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Quantifying Incarceration</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="storyline.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Graphs</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="storyline.html">Prison Population Storyline</a></li>
+                    <li><a class="dropdown-item" href="lynchings_graph.html">Lynchings in Georgia</a></li>
+                    <li><a class="dropdown-item" href="prison_population_graph.html">White &amp; Black Prison Population</a></li>
+                    <li><a class="dropdown-item active" aria-current="page" href="maps.html">Convict Leasing &amp; Slavery</a></li>
+                    <li><a class="dropdown-item" href="georgia_population.html">Georgia Population</a></li>
+                    <li><a class="dropdown-item" href="georgia_voting.html">Voting in Georgia</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="methods.html">Methods &amp; Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="further_reading.html">Further Reading</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+    </header>
+    <main>
+      <h1 class="graph-heading text-center">Connections Between the Convict Lease System and Slavery in Georgia</h1>
+      <p class="graph-desc text-center">From 1868-1908, Georgia's prisons utilized a system known as convict leasing. Under this system, Georgia “leased” prisoners (the majoirty of these prisoners were Black) to private individuals, who could then use the prisoners for work. These private individuals paid Georgia for the prisoners' labor, but the prisoners themselves received no compensation for their work. Through the use of the convict lease system, White Georgian politicians mimiced the institution of slavery and exploited Black people's labor by forcing Black people to return work on the same plantations they had just been freed from.</p>
+      <p class="graph-desc text-center">The graphs below compare the Georgia counties that had the most enslaved people in 1860 to the Georgia counties with the most Black prisoners during convict leasing. These graphs demonstrate that Georgians were utilizing convict leasing to continue the institution of slavery because the counties that had the most enslaved people also tended to have the most prisoners. For instance, Chatham County had 14,807 enslaved people in 1860, which was the most of any Georgia County, and during convict leasing, Chatham County had 67 Black prisoners, which was the second most Black prisoners of any Georgia County. This connection between enslaved populations and the number of Black prisoners can also be seen in other Georgia Counties, such as Bibb, Richmond, and Muscogee Counties, which were in the top five counties with the most Black prisoners and were in the top twenty-five counties with the most enslaved people in 1860. One major exception to this trend was Fulton County, which had the most number of Black prisoners of any Georgia county but was not even in the top fifty of the number of enslaved people. This outlier can most likely be explained by the fact that Fulton County did not become an urban center until after slavery had been abolished when Georgia's capital city was moved to Fulton County in 1868.  Although this trend does not occur in all Georgia counties, it still showcases that during the period in which convict leasing was utilized in Georgia, Black people were more likely to be incarcerated in counties that had the most enslaved laborers before abolition.</p>
+      <div id="map-container">
+        <div id="map1" class="maps"></div>
+
+        <script type="text/javascript" src="geojson.js"></script>
+
+        <script type="text/javascript">
+
+          const map1 = L.map('map1').setView([32.74654357428453, -82.25176415866494], 7);
+
+          const tiles1 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map1);
+
+          const info1 = L.control();
+
+          info1.onAdd = function (map1) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+          };
+
+          info1.update = function (props) {
+            const contents1 = props ? `<b>${props.name}</b><br />${props.slave} enslaved people` : 'Hover over a county to see the number <br>of enslaved people there. Counties that<br>did not exist until after 1860 were left blank.<br><a href="url">READ MORE ABOUT THIS DATA</a>';
+            this._div.innerHTML = `<h4>Enslaved People in<br>Georgia in 1860</h4>${contents1}`;
+          };
+
+          info1.addTo(map1);
+
+          function getColor(d) {
+            return d > 11000 ? '#2d000d' :
+              d > 9500 ? '#93002c' :
+              d > 8000 ? '#cd0029' :
+              d > 6500  ? '#e62426' :
+              d > 5000  ? '#fc5735' :
+              d > 3500  ? '#fd9346' :
+              d > 2000  ? '#feb655' :
+              d > 500   ? '#fedb7d' : '#ffeea5';
+          }
+
+          function style(feature) {
+            return {
+              weight: 1,
+              opacity: 1,
+              color: 'black',
+              dashArray: '3',
+              fillOpacity: 0.7,
+              fillColor: getColor(feature.properties.slave)
+            };
+          }
+          function highlightFeature(e) {
+            const layer1 = e.target;
+
+            layer1.setStyle({
+              weight: 5,
+              color: '#666',
+              dashArray: '',
+              fillOpacity: 0.7
+            });
+
+            layer1.bringToFront();
+
+            info1.update(layer.feature.properties);
+          }
+
+          const geojson1 = L.geoJson(countyData, {
+            style,
+            onEachFeature
+          }).addTo(map1);
+
+          function resetHighlight(e) {
+            geojson1.resetStyle(e.target);
+            info1.update();
+          }
+
+          function zoomToFeature(e) {
+            map1.fitBounds(e.target.getBounds());
+          }
+
+          function onEachFeature(feature, layer) {
+            layer.on({
+              mouseover: highlightFeature,
+              mouseout: resetHighlight,
+              click: zoomToFeature
+            });
+          }
+
+          map1.attributionControl.addAttribution('Slave Population Data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+
+
+          const legend1 = L.control({position: 'bottomright'});
+
+          legend1.onAdd = function (map1) {
+
+            const div1 = L.DomUtil.create('div', 'info legend');
+            const grades1 = [0, 500, 2000, 3500, 5000, 6500, 8000, 9500, 11000];
+            const labels1 = [];
+            let from, to;
+
+            for (let i = 0; i < grades.length; i++) {
+              from = grades1[i];
+              to = grades1[i + 1];
+
+              labels1.push(`<i style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
+            }
+
+            div1.innerHTML = labels1.join('<br>');
+            return div1;
+          };
+
+          legend1.addTo(map1);
+          
+        </script>
+        <div id="map" class="maps"></div>
+
+        <script type="text/javascript" src="geojson.js"></script>
+
+        <script type="text/javascript">
+
+          const map = L.map('map').setView([32.74654357428453, -82.25176415866494], 7);
+
+          const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map);
+
+          const info = L.control();
+
+          info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+          };
+
+          info.update = function (props) {
+            const contents = props ? `<b>${props.name}</b><br />${props.prison} Black prisoners` : 'Hover over a county to see the number of Black<br>people imprisoned there. Counties that did not exist<br>until after slavery ended in 1865 were left blank.<br><a href="url">READ MORE ABOUT THIS DATA</a>';
+            this._div.innerHTML = `<h4>Black Prisoners in Georgia<br>from 1868-1908</h4>${contents}`;
+          };
+
+          info.addTo(map);
+
+          function getColor(d) {
+            return d > 70 ? '#2d000d' :
+              d > 40 ? '#93002c' :
+              d > 30 ? '#cd0029' :
+              d > 25  ? '#e62426' :
+              d > 20  ? '#fc5735' :
+              d > 15  ? '#fd9346' :
+              d > 10  ? '#feb655' :
+              d > 5   ? '#fedb7d' : '#ffeea5';
+          }
+
+          function style(feature) {
+            return {
+              weight: 1,
+              opacity: 1,
+              color: 'black',
+              dashArray: '3',
+              fillOpacity: 0.7,
+              fillColor: getColor(feature.properties.prison)
+            };
+          }
+          function highlightFeature(e) {
+            const layer = e.target;
+
+            layer.setStyle({
+              weight: 5,
+              color: '#666',
+              dashArray: '',
+              fillOpacity: 0.7
+            });
+
+            layer.bringToFront();
+
+            info.update(layer.feature.properties);
+          }
+
+          const geojson = L.geoJson(countyData, {
+            style,
+            onEachFeature
+          }).addTo(map);
+
+          function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+            info.update();
+          }
+
+          function zoomToFeature(e) {
+            map.fitBounds(e.target.getBounds());
+          }
+
+          function onEachFeature(feature, layer) {
+            layer.on({
+              mouseover: highlightFeature,
+              mouseout: resetHighlight,
+              click: zoomToFeature
+            });
+          }
+
+          map.attributionControl.addAttribution('Prison Population Data &copy; <a href="https://www.ancestry.com/search/collections/3056/">Ancestry</a>');
+
+
+          const legend = L.control({position: 'bottomright'});
+
+          legend.onAdd = function (map) {
+
+            const div = L.DomUtil.create('div', 'info legend');
+            const grades = [0, 5, 10, 15, 20, 25, 30, 40, 70];
+            const labels = [];
+            let from, to;
+
+            for (let i = 0; i < grades.length; i++) {
+              from = grades[i];
+              to = grades[i + 1];
+
+              labels.push(`<i style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
+            }
+
+            div.innerHTML = labels.join('<br>');
+            return div;
+          };
+
+          legend.addTo(map);
+          
+        </script>
+      </div>
+    </main>
+    <footer>
+      <div id="top-button">
+          <button onclick="topFunction()" id="myBtn" title="Go to top">Back<br>to Top</button>
+          <script src="main.js"></script>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -137,6 +137,7 @@ body {
 #storyline {
     background-color: white;
     margin: 1.9%;
+    overflow-x: hidden;
 }
 #storyline iframe {
     padding: 2%;

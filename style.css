@@ -8,9 +8,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-main {
-    padding-bottom: .01%;
-}
 #navbar {
     background-color: #000000 !important;
     --bs-navbar-active-color: #a56a24;
@@ -76,7 +73,7 @@ main {
 }
 #timeline {
     border: #000000 1px solid;
-    margin-bottom: .99%;
+    margin-bottom: 1%;
 }
 /* Maps */
 #map-container {
@@ -90,7 +87,7 @@ main {
     max-width: 100%;
     max-height: 100%;
     z-index: 1;
-    margin-bottom: 3%;
+    margin-bottom: 1%;
 }
 #map1 {
     margin-left: 2%;
@@ -139,16 +136,42 @@ main {
 }
 #storyline {
     background-color: white;
-    margin: 2%;
+    margin: 1.9%;
 }
 #storyline iframe {
     padding: 2%;
     margin-bottom: -2%;
+    overflow-x: hidden;
 }
 #myChart {
     margin: 2%;
     background-color: white;
     padding: 2%;
+}
+/*Other Pages*/
+.page-heading {
+    margin: 16.5% 1% 0% 1%;
+    font-size: 44.8px;
+    color: black;
+    font-family: "Crimson Pro", serif;
+}
+.page-heading2 {
+    margin: 0% 1%;
+    font-size: 44.8px;
+    color: black;
+    font-family: "Crimson Pro", serif;
+}
+.page-text {
+    margin: 1% 2% 1.5% 2%;
+    font-family: "Crimson Pro", serif;
+    font-size: 18px;
+    letter-spacing: -.3px;
+    line-height: 1.4em;
+    color: black;
+}
+#thanks-list {
+    margin: -1% 2% 0% 2%;
+    padding-bottom: 2%;
 }
 /* Responsiveness */
 @media only screen and (max-width: 600px) {

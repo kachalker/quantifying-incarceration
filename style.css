@@ -62,9 +62,9 @@ body {
 .btn-primary {
     --bs-btn-color: #fff;
     --bs-btn-bg: #a56a24;
-    --bs-btn-border-color: #a56424;
+    --bs-btn-border-color: #734a19;
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #a56424;
+    --bs-btn-hover-bg: #734a19;
     --bs-btn-hover-border-color: black;
     font-family: "Crimson Pro", serif;
     font-size: 25px;
@@ -138,11 +138,13 @@ body {
     background-color: white;
     margin: 1.9%;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 #storyline iframe {
     padding: 2%;
     margin-bottom: -2%;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 #myChart {
     margin: 2%;
@@ -152,15 +154,34 @@ body {
 /*Other Pages*/
 .page-heading {
     margin: 16.5% 1% 0% 1%;
-    font-size: 44.8px;
+    font-size: 56px;
     color: black;
     font-family: "Crimson Pro", serif;
 }
 .page-heading2 {
     margin: 0% 1%;
-    font-size: 44.8px;
+    font-size: 56px;
     color: black;
     font-family: "Crimson Pro", serif;
+}
+.page-heading-small {
+    margin: 2% 1% 0% 1%;
+    font-size: 36px;
+    color: black;
+    font-family: "Crimson Pro", serif;
+}
+.methods-button {
+    margin: 0% 2% -.75% 2%;
+}
+.link {
+    color: #a56a24;
+}
+.link:hover {
+    color: #734a19;
+    font-weight: 500;
+}
+#thanks-list {
+    margin: -1% 2% 0% 2%;
 }
 .page-text {
     margin: 1% 2% 1.5% 2%;
@@ -169,15 +190,25 @@ body {
     letter-spacing: -.3px;
     line-height: 1.4em;
     color: black;
+    text-indent: 25px;
 }
-#thanks-list {
-    margin: -1% 2% 0% 2%;
-    padding-bottom: 2%;
+.page-text-bottom {
+    margin: 1% 2% 1.5% 2%;
+    font-family: "Crimson Pro", serif;
+    font-size: 18px;
+    letter-spacing: -.3px;
+    line-height: 1.4em;
+    color: black;
+    text-indent: 25px;
+    padding-bottom: 3.1%;
+}
+#code-example {
+    margin: 1% 5% 1.5% 5%;
+    padding-bottom: 3.1%;
 }
 /* Responsiveness */
 @media only screen and (max-width: 600px) {
     #home h1 {
-        margin: 5% 2% 0% 2%;
         font-size: 55px;
     }
     .btn-primary {
@@ -196,5 +227,8 @@ body {
 @media only screen and (max-width: 1050px) {
     body {
         background-image: url(images/background-small.png);
+    }
+    #home h1 {
+        margin: 5% 2% 0% 2%;
     }
 }

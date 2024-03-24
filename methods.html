@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Methods and Data</title>
+    <link rel="icon" href="images/gadoc_logo.png" type="image/png"> <!--Image taken from the Georgia Department of Corrections Account on X-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Quantifying Incarceration</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="storyline.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Graphs</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="storyline.html">Prison Population Storyline</a></li>
+                    <li><a class="dropdown-item" href="lynchings_graph.html">Lynchings in Georgia</a></li>
+                    <li><a class="dropdown-item" href="prison_population_graph.html">White &amp; Black Prison Population</a></li>
+                    <li><a class="dropdown-item" href="maps.html">Convict Leasing &amp; Slavery</a></li>
+                    <li><a class="dropdown-item" href="georgia_population.html">Georgia Population</a></li>
+                    <li><a class="dropdown-item" href="georgia_voting.html">Voting in Georgia</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="methods.html">Methods &amp; Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="further_reading.html">Further Reading</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+    </header>
+    <main>
+      <h1 class="page-heading text-center">Methods &amp; Data</h1>
+      <h2 class="page-heading-small">The Central Register of Convicts</h2>
+      <p class="page-text">Most of the data used in this project was taken from the <a class="link" href="https://www.ancestry.com/search/collections/3056/" target="_blank">Central Register of Convicts</a> that <a class="link" href="https://www.ancestry.com/" target="_blank">Ancestry.com</a> has digitized. The Central Register of Convicts contains information about convicts in the Georgia prison system from 1817-1976, including the convicts' name, race, birth year, received date, and conviction county. Even though this database contains data from 1817 to 1976, this project only examines the prisoner data from 1865 to 1965. This one-hundred-year period was chosen because Black prisoners did not begin to enter the prison system in large numbers until the abolishment of slavery in 1865, and the “War on Crime” era introduced by President Lyndon B. Johnson in 1965 fundamentally transformed the United States justice system and should be examined as a separate period.</p>
+      <p class="page-text">Three main pieces of information were taken from the Central Register of Convicts to create the quantitative data used in this project: the convicts' race, received date, and conviction county. The five main classifications that the Central Register of Convicts used to denote Blackness were colored, cd (an abbreviation for colored), Black, negro, and mulatto. In the 1960s, more specific classifications of race began to be utilized in the Central Register of Convicts, such as light brown and dark brown, but because it was difficult to discern if these classifications were referring to Black people and not other people of color, convicts with those racial classifications were not included in the data for this project. In order to create graphs that showcase the changes in Georgia's prison population in the one-hundred-year period examined in this project, the convicts' race and received date from 1865-1965 were input into an Excel sheet, and the convicts' received counties were recorded in a separate Excel sheet. However, because the data from the convicts' received counties was only used in this project to explore whether the convict lease system was used to send Black people back to work on the plantations they had previously worked on while enslaved, the convicts' received counties are only recorded from 1868-1908, the forty-year period in which the convict lease system existed in Georgia. Both Excel sheets were converted to CSV files so graphs could be created from the data.</p>
+      <a class="btn btn-primary text-center methods-button" href="data/The Central Register of Convicts Data.xlsx" target="_blank" role="button">Download this Dataset</a>
+      <h2 class="page-heading-small">Georgia Census Records</h2>
+      <p class="page-text">In addition to using the Central Register of Convicts, this project utilized Georgia censuses from every ten years from 1860 to 1970 as quantitative evidence. Although the Georgia censuses are digitized on <a class="link" href="https://www.census.gov/" target="_blank">Census.gov</a>, they are not in a machine-readable format, so the data from these censuses was also input into an Excel sheet and converted into a CSV file to create graphs. The primary purpose of including Georgia's census data in this project was to compare Georgia's total Black population to Georgia's Black prison population. Therefore, for each census, only the year, total White population, and total Black population were recorded in this project's dataset. Even though the data from the Georgia censuses were mainly utilized in this project to compare Georgia's total Black population to Georgia's Black prison population, the number of enslaved people by county was also recorded on a separate Excel sheet so the counties with the most enslaved people right before the Civil War could be compared to the counties with the most prisoners during the existence of the convict lease system. The spelling of all counties was modernized to create this dataset and because many Georgia counties were not established until after slavery ended in 1865, prisoners from counties established after 1865 were divided equally among the counties that their county was created from.</p>
+      <a class="btn btn-primary text-center methods-button" href="data/Georgia Census Records Data.xlsx" target="_blank" role="button">Download this Dataset</a>
+      <h2 class="page-heading-small">Monroe &amp; Florence Work Today: Lynching Data</h2>
+      <p class="page-text">Another source used in this project was a digital humanities project titled <cite><a class="link" href="https://plaintalkhistory.com/monroeandflorencework/explore/map2/#3/38/-97.5" target="_blank">Monroe &amp; Florence Work Today</a></cite>. By utilizing lynching data that was gathered in the nineteenth and twentieth centuries by Monroe Nathan Work and his wife Florence, this project compiled a list of lynchings of Black people in the United States. However, this project utilized a broader definition of lynching, so it included data of all cases of racialized mob violence against Black people. This project utilized the data that this project compiled by recording the number of lynchings by year that occurred in Georgia on an Excel sheet and converting it into a CSV file in order to make graphs that tracked the number of lynchings over the one-hundred-year period that this project examines. However, this project did not record any lynching data until 1877, so there is no data from 1865 to 1876.</p>
+      <a class="btn btn-primary text-center methods-button" href="data/Lynching Data.xlsx" target="_blank" role="button">Download this Dataset</a>
+      <h2 class="page-heading-small">US Election Atlas: Voting Data</h2>
+      <p class="page-text">The last data source used as quantitative evidence in this project was the popular voting data from Georgia's presidential elections from 1868 to 1964. This data was compiled by David Liep from Georgia's Official Register and published on the website <a class="link" href="https://uselectionatlas.org/RESULTS/compare.php?year=1900&fips=13&f=0&off=0&elect=0&type=state" target="_blank">Uselectionatlas.org</a>. Although this database contains the raw number of votes cast for each candidate, the only data taken from this database was the margin of the Democratic party's victory since Democrats dominated Georgia's elections and garnered much of the White vote in Georgia until the 1960s. This data was important to this project because even though the various voting restrictions introduced by the Georgia legislature greatly restricted the Black vote, Georgians were still concerned that Black people would vote in high enough numbers to allow a party other than Democrats to gain power. Because of this fear of the Black vote in Georgia, lower margins of victory for Democrats in Georgia's presidential elections can be demonstrative of larger racial anxieties that motivated Georgians to rely on their penal system as an element of social control to ensure that Black people could not influence the vote.</p>
+      <a class="btn btn-primary text-center methods-button" href="data/Voting Data.xlsx" target="_blank" role="button">Download this Dataset</a>
+      <h2 class="page-heading-small">Limitations of Using Big Data in Historical Analysis</h2>
+      <p class="page-text">Even though the quantitative evidence used in this project allows for a longer time period to be more easily examined, using quantitative evidence is not without its limitations. One of the most significant limitations of quantitative evidence is potential inaccuracies in the data. For example, much of the quantitative evidence utilized in this project was extracted from self-reported data by the state of Georgia, and it is impossible to know if the reported data was accurate. Furthermore, because it can be challenging to understand the different racial classifications utilized by Georgia in the nineteenth and twentieth centuries, some of Georgia's reported data can be misunderstood and, therefore, recorded incorrectly in the dataset created for this project.</p>
+      <h2 class="page-heading-small">Creating the Visualizations</h2>
+      <p class="page-text">There were various programs used to create the visualizations that are used on this website. <a class="link" href="https://timeline.knightlab.com/" target="_blank">Timeline.js</a> was used to create the timeline included on the homepage. <a class="link" href="https://storyline.knightlab.com/" target="_blank">Storyline.js</a> was used to create the annotated prison population graph. <a class="link" href="https://leafletjs.com/examples/choropleth/" target="_blank">Leaflet</a> was used to create the two chloropleth maps utilized to show the connections between slavery and convict leasing and <a class="link" href="https://www.chartjs.org/" target="_blank">Chart.js</a> was used to create all of the other graphs. You can view an example of the code used to create the Chart.js graphs below.</p>
+      <div id="code-example">
+        <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LYvLEwq" data-editable="true" data-user="kachalker" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/kachalker/pen/LYvLEwq">
+          Chart.js Example</a> by Kaitlyn (<a href="https://codepen.io/kachalker">@kachalker</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+      </div>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+    </main>
+    <footer>
+      <div id="top-button">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Back<br>to Top</button>
+        <script src="main.js"></script>
+      </div>
+    </footer>
+  </body>
+</html>

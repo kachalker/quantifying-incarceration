@@ -71,9 +71,8 @@ body {
     margin-top: .05%;
     margin-bottom: 1.5%;
 }
-#timeline {
-    border: #000000 1px solid;
-    margin-bottom: 1%;
+#timeline-cont {
+    padding-bottom: 1%;
 }
 /* Maps */
 #map-container {

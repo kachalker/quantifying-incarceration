@@ -202,8 +202,10 @@ body {
     padding-bottom: 3.1%;
 }
 #code-example {
-    margin: 1% 5% 1.5% 5%;
-    padding-bottom: 3.1%;
+    margin: 1% 5% 2% 5%;
+}
+#methods-button-bottom {
+    margin-bottom: 2%;
 }
 /* Responsiveness */
 @media only screen and (max-width: 600px) {

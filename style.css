@@ -7,6 +7,8 @@ body {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
+    background-color: #f4ebe2;
 }
 #navbar {
     background-color: #000000 !important;
@@ -77,7 +79,7 @@ body {
 /* Maps */
 #map-container {
     width: 100%;
-    margin-top: 2%;
+    padding-top: 2%;
 }
 .maps {
     width: 46.8%;
@@ -224,6 +226,12 @@ body {
     #timeline {
         margin-bottom: 10%;
     }
+    .graph-heading {
+        font-size: 36px;
+    }
+    .graph-desc {
+        font-size: 16px;
+    }
 }
 @media only screen and (max-width: 1050px) {
     body {
@@ -231,5 +239,24 @@ body {
     }
     #home h1 {
         margin: 5% 2% 0% 2%;
+    }
+    .graph-heading {
+        margin: 1% 2% 0% 2%;
+    }
+}
+@media only screen and (max-width: 1285px) {
+    .maps {
+        display: block;
+        width: 96%;
+    }
+    #map1 {
+        margin: 0% 2%;
+    }
+    #map {
+        margin: 2% 2%;
+    }
+    .graph-desc {
+        margin: 2% 5% 5% 5%;
+        font-family: "Crimson Pro", serif;
     }
 }

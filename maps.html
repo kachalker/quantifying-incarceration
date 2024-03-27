@@ -74,7 +74,7 @@
 
           const info1 = L.control();
 
-          info1.onAdd = function (map1) {
+          info1.onAdd = function (map) {
             this._div = L.DomUtil.create('div', 'info');
             this.update();
             return this._div;
@@ -120,7 +120,7 @@
 
             layer1.bringToFront();
 
-            info1.update(layer.feature.properties);
+            info1.update(layer1.feature.properties);
           }
 
           const geojson1 = L.geoJson(countyData, {
@@ -150,7 +150,7 @@
 
           const legend1 = L.control({position: 'bottomright'});
 
-          legend1.onAdd = function (map1) {
+          legend1.onAdd = function (map) {
 
             const div1 = L.DomUtil.create('div', 'info legend');
             const grades1 = [0, 500, 2000, 3500, 5000, 6500, 8000, 9500, 11000];

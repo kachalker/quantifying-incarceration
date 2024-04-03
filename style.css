@@ -7,7 +7,6 @@ body {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow-x: hidden;
     background-color: #f4ebe2;
 }
 #navbar {
@@ -138,14 +137,10 @@ body {
 #storyline {
     background-color: white;
     margin: 1.9%;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 #storyline iframe {
-    padding: 2%;
     margin-bottom: -2%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    padding: 1%;
 }
 #myChart {
     margin: 2%;
@@ -186,6 +181,15 @@ body {
 }
 .page-text {
     margin: 1% 2% 1.5% 2%;
+    font-family: "Crimson Pro", serif;
+    font-size: 18px;
+    letter-spacing: -.3px;
+    line-height: 1.4em;
+    color: black;
+    text-indent: 25px;
+}
+.page-text-center {
+    margin: 1% 20% 1.5% 20%;
     font-family: "Crimson Pro", serif;
     font-size: 18px;
     letter-spacing: -.3px;

@@ -87,15 +87,15 @@
 
           info1.addTo(map1);
 
-          function getColor(d) {
-            return d > 11000 ? '#2d000d' :
-              d > 9500 ? '#93002c' :
-              d > 8000 ? '#cd0029' :
-              d > 6500  ? '#e62426' :
-              d > 5000  ? '#fc5735' :
-              d > 3500  ? '#fd9346' :
-              d > 2000  ? '#feb655' :
-              d > 500   ? '#fedb7d' : '#ffeea5';
+          function getColor(d1) {
+            return d1 > 11000 ? '#2d000d' :
+              d1 > 9500 ? '#93002c' :
+              d1 > 8000 ? '#cd0029' :
+              d1 > 6500  ? '#e62426' :
+              d1 > 5000  ? '#fc5735' :
+              d1 > 3500  ? '#fd9346' :
+              d1 > 2000  ? '#feb655' :
+              d1 > 500   ? '#fedb7d' : '#ffeea5';
           }
 
           function style(feature) {
@@ -129,7 +129,7 @@
           }).addTo(map1);
 
           function resetHighlight(e) {
-            geojson1.resetStyle(e.target);
+            geojson.resetStyle(e.target);
             info1.update();
           }
 
@@ -157,7 +157,7 @@
             const labels1 = [];
             let from, to;
 
-            for (let i = 0; i < grades.length; i++) {
+            for (let i = 0; i < grades1.length; i++) {
               from = grades1[i];
               to = grades1[i + 1];
 

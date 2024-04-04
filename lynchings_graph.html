@@ -32,7 +32,7 @@
                     <li><a class="dropdown-item active" aria-current="page" href="lynchings_graph.html">Lynchings in Georgia</a></li>
                     <li><a class="dropdown-item" href="prison_population_graph.html">White &amp; Black Prison Population</a></li>
                     <li><a class="dropdown-item" href="maps.html">Convict Leasing &amp; Slavery</a></li>
-                    <li><a class="dropdown-item" href="georgia_population.html">Georgia Population</a></li>
+                    <li><a class="dropdown-item" href="georgia_population.html">Georgia's Population</a></li>
                     <li><a class="dropdown-item" href="georgia_voting.html">Voting in Georgia</a></li>
                   </ul>
                 </li>
@@ -52,6 +52,8 @@
     </header>
     <main>
       <h1 class="graph-heading text-center">Lynchings in Georgia from 1865-1965</h1>
+      <p class="graph-desc text-center">The following graph shows the lynchings that occurred in Georgia from 1877-1965 (no lynching data is available before 1877). Even though lynchings had been occurring in America since the colonial period, it was not until after the Civil War, in the late nineteenth and early twentieth centuries, that lynchings became a widespread practice in America. Between the early 1880s and World War II, over 4,700 people were lynched in the United States, and 83% of these lynching victims were Black. Furthermore, over 80% of these 4,700 lynchings occurred in the South, with Georgia having some of the most lynchings of any Southern state.  Many of the lynchings in Georgia were incredibly brutal, and they were meant to act as a spectacle to instill fear in the minds of Black people of what would happen if they attempted to break free from the subservient social positions that White Georgians had created for them.</p>
+      <p class="graph-desc text-center">Because lynchings and Georgia's penal system were both used as a form of social control in response to fears about threats to White supremacy in Georgia, comparing the number of lynchings in Georgia each year to the number of <a class="link" href="prison_population_graph.html" target="_blank">Black prisoners in Georgia each year</a> can provide interesting insights into how these two forms of social control interacted together. One might expect that because both of these systems were used in response to racial anxieties, more lynchings in a given year would also mean more Black people incarcerated that year, but that was not the case. Instead, the data shows that there is an inverse relationship between the number of lynchings in Georgia and the number of incarcerated Black people. One of the highest periods of lynchings in Georgia was from 1888-1922, with an average of 14 Black people being lynched per year during that span. However, from 1923-1965, there was a 93% decrease in the number of lynchings, with an average of only 1 lynching per year during this period.  There was an opposite trend in the number of incarcerated Black people in Georgia. From 1888-1922, there was only an average of 216 Black people incarcerated per year, but from 1923-1965, there was an average of 2,054 people incarcerated per year, which was an 851% increase. It is impossible to know for sure why there was an inverse correlation between lynching and incarceration rates in Georgia. However, one potential explanation is that as White Georgians began to denounce lynching in an attempt to distance themselves from the idea of the “old south … and to show that in the new south old prejudices [were] breaking up,” they began to rely on the state's penal system as a new form of social control (<cite>The Atlanta Constitution</cite>, January 1, 1905).</p>
       <div>
         <canvas id="myChart"></canvas>
       </div>
@@ -60,7 +62,7 @@
         const ctx = document.getElementById('myChart');
       
         new Chart(ctx, {
-          type: 'bar',
+          type: 'line',
           data: {
             labels: [1865, 1866, 1867, 1868, 1869, 1870, 1871, 1872, 1873, 1874, 1875, 1876, 1877, 1878, 1879, 1880, 1881, 1882, 1883, 1884, 1885, 1886, 1887, 1888, 1889, 1890, 1891, 1892, 1893, 1894, 1895, 1896, 1897, 1898, 1899, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965],
             datasets: [{

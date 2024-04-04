@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Georgia Population</title>
+    <title>Georgia's Population</title>
     <link rel="icon" href="images/gadoc_logo.png" type="image/png"> <!--Image taken from the Georgia Department of Corrections Account on X-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
@@ -52,7 +52,8 @@
     </header>
     <main>
       <h1 class="graph-heading text-center">Georgia's Population from 1860-1970</h1>
-      <p class="graph-desc text-center">This graph showcases Georgia's Black and White population from 1860-1970. This graph is helpful to compare to Georgia's prison population because it shows that the percentage of Georgia's prison population that was Black was not proportional to the percentage of Georgia's total Black population.</p>
+      <p class="graph-desc text-center">These graphs showcase Georgia's Black and White population from 1860-1970. These graphs are helpful to compare to <a class="link" href="prison_population_graph.html" target="_blank">Georgia's prison population</a> because it shows that the percentage of Georgia's prison population that was Black was not proportional to the percentage of Georgia's total Black population.</p>
+      <h2 class="page-heading-small">Georgia's Black and White Population:</h2>
       <div>
         <canvas id="myChart"></canvas>
       </div>
@@ -89,6 +90,43 @@
           }
         });
       </script>
+            <h2 class="page-heading-small">Georgia's Black and White Populations as % of Whole:</h2>
+            <div>
+              <canvas id="myChart1"></canvas>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+              const ctx1 = document.getElementById('myChart1');
+            
+              new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                  labels: [1860,1870,1880,1890,1900,1910,1920,1930,1940,1950,1960,1970],
+                  datasets: [{
+                    label: 'White People as % of Whole',
+                    data: [56, 54, 53, 53, 53, 55, 58, 63, 65, 69, 72, 74],
+                    borderWidth: 1
+                  },
+                  {
+                    label: 'Black People as % of Whole',
+                    data: [44, 46, 47, 47, 47, 45, 42, 37, 35, 31, 28, 26],
+                    borderWidth: 1
+                  }
+                  ]
+                },
+                options: {
+                  scales: {
+                    x: {
+                      stacked: true
+                    },
+                    y: {
+                      beginAtZero: true,
+                      stacked: true
+                    }
+                  }
+                }
+              });
+            </script>
       <center><div>
         <a class="btn btn-primary text-center" href="data/Population Data.xlsx" target="_blank" role="button">Download the Data Used in This Graph</a>
       </div></center>

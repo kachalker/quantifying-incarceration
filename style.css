@@ -142,7 +142,7 @@ body {
     margin-bottom: -2%;
     padding: 1%;
 }
-#myChart {
+#myChart, #myChart1 {
     margin: 2%;
     background-color: white;
     padding: 2%;
@@ -157,6 +157,12 @@ body {
 .page-heading2 {
     margin: 0% 1%;
     font-size: 56px;
+    color: black;
+    font-family: "Crimson Pro", serif;
+}
+.page-heading-medium {
+    margin: 0% 1%;
+    font-size: 46px;
     color: black;
     font-family: "Crimson Pro", serif;
 }
@@ -212,6 +218,10 @@ body {
 }
 #methods-button-bottom {
     margin-bottom: 2%;
+}
+#other-graphs {
+    margin: .05% 2%;
+    padding-bottom: 3%;
 }
 /* Responsiveness */
 @media only screen and (max-width: 600px) {

@@ -32,7 +32,7 @@
                     <li><a class="dropdown-item" href="lynchings_graph.html">Lynchings in Georgia</a></li>
                     <li><a class="dropdown-item active" aria-current="page" href="prison_population_graph.html">White &amp; Black Prison Population</a></li>
                     <li><a class="dropdown-item" href="maps.html">Convict Leasing &amp; Slavery</a></li>
-                    <li><a class="dropdown-item" href="georgia_population.html">Georgia Population</a></li>
+                    <li><a class="dropdown-item" href="georgia_population.html">Georgia's Population</a></li>
                     <li><a class="dropdown-item" href="georgia_voting.html">Voting in Georgia</a></li>
                   </ul>
                 </li>
@@ -51,7 +51,9 @@
       </nav>
     </header>
     <main>
-      <h1 class="graph-heading text-center">Georgia's Total White and Black Prison Population from 1865-1965</h1>
+      <h1 class="graph-heading text-center">Georgia's Prison Population from 1865-1965</h1>
+      <p class="graph-desc text-center">The following graphs show Georgia's White and Black prison population. Considering there were only two years from 1865-1965 that Black people did not make up at least 50% of Georgia's prison population, these graphs clearly show that Black people were being incarcerated at higher rates than White people in Georgia even though there were <a class="link" href="georgia_population.html" target="_blank">less Black people living in Georgia than White people</a>.</p>
+      <h2 class="page-heading-small">White and Black Prisoners in Georgia:</h2>
       <div>
         <canvas id="myChart"></canvas>
       </div>
@@ -83,6 +85,33 @@
               y: {
                 beginAtZero: true,
                 stacked: true
+              }
+            }
+          }
+        });
+      </script>
+      <h2 class="page-heading-small">Black Prisoners as Percentage of Georgia's Prison Population:</h2>
+      <div>
+        <canvas id="myChart1"></canvas>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const ctx1 = document.getElementById('myChart1');
+      
+        new Chart(ctx1, {
+          type: 'line',
+          data: {
+            labels: [1865,1866,1867,1868,1869,1870,1871,1872,1873,1874,1875,1876,1877,1878,1879,1880,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1892,1893,1894,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965],
+            datasets: [{
+              label: 'Black Prisoners as % of Total Prison Population',
+              data: [100,100,100,100,100,100,84,98,89,90,93,89,86,86,91,80,85,89,90,88,88,82,87,91,85,75,84,88,89,84,90,91,79,86,79,76,71,79,75,77,80,76,75,80,79,80,70,77,76,74,76,84,63,60,68,62,69,63,54,52,50,50,44,50,53,52,52,59,65,64,52,54,59,68,67,64,64,68,67,65,60,59,58,57,56,55,53,55,54,57,57,56,55,53,56,56,56,58,53,54,55],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
               }
             }
           }

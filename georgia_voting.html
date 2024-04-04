@@ -32,7 +32,7 @@
                     <li><a class="dropdown-item" href="lynchings_graph.html">Lynchings in Georgia</a></li>
                     <li><a class="dropdown-item" href="prison_population_graph.html">White &amp; Black Prison Population</a></li>
                     <li><a class="dropdown-item" href="maps.html">Convict Leasing &amp; Slavery</a></li>
-                    <li><a class="dropdown-item" href="georgia_population.html">Georgia Population</a></li>
+                    <li><a class="dropdown-item" href="georgia_population.html">Georgia's Population</a></li>
                     <li><a class="dropdown-item active" aria-current="page" href="georgia_voting.html">Voting in Georgia</a></li>
                   </ul>
                 </li>
@@ -53,6 +53,9 @@
     <main>
       <h1 class="graph-heading text-center">Margin of Southern Democratic Victory in Georgia from 1868-1960</h1>
       <p class="graph-desc text-center">This graph shows the margin of Southern Democratic victory in presidential elections in Georgia from 1868-1960. Data was not gathered for elections past 1960 because the Southern Democrats had lost power in Georgia by the 1964 election because those who used to be Southern Democrats abandoned the party after Southern Democrat Lyndon B. Johnson signed the Civil Rights 1964.</p>
+      <p class="graph-desc text-center">In 1867, only one year after the emancipation of Georgia's enslaved people, Georgia introduced an act that called for the disenfranchisement of all Georgians convicted of a felony, known as the felony disenfranchisement act. Although this act did not explicitly target Black people, because Black people were disproportionately convicted of felonies in Georgia, they were also disproportionately disenfranchised. Furthermore, comparing Georgia's Black prison population to the margin of Democratic victory in Georgia's presidential elections showcases how this act was also used to ensure that Black people could not regain the political power that Georgia's White politicians had worked so ardently to take away.</p>
+      <p class="graph-desc text-center">An example of White Georgian polticians using this act to guarantee Black Georgians would not gain any poltiical power was in the 1928 election. For most of the late 1800s and early 1900s, the Democratic party dominated Georgia's presidential elections, and their victory was practically assured in Georgia. However, in 1928, many White Democrats in Georgia chose to abandon their party and vote for the Republican candidate because they opposed the Democratic candidate's stance on Prohibition, and they did not like that the Democratic candidate was a Catholic since many of them were Protestant. Although the Democratic candidate did end up winning the 1928 election in Georgia by a 13.19% margin, his near loss made many White Georgians fearful of the political power that Black Georgians would regain if the Southern Democrats lost their majority in Georgia.</p>
+      <p class="graph-desc text-center">In 1927, Black people only made up 44% of <a class="link" href="prison_population_graph.html" target="_blank">Georgia's total Black and White prison population</a>, which was the lowest percentage in the one-hundred-year span examined on this website. However, in the wake of all the fears concerning how the increased Republican power during the 1928 presidential election would lead to increased Black political power in Georgia, Black people grew to make up 50% of Georgia's incarcerated population by 1928. This number continued to rise in the following years, growing to 59% by the next presidential election in 1932.</p>
       <div>
         <canvas id="myChart"></canvas>
       </div>
@@ -61,7 +64,7 @@
         const ctx = document.getElementById('myChart');
       
         new Chart(ctx, {
-          type: 'bar',
+          type: 'line',
           data: {
             labels: [1868,1872,1876,1880,1884,1888,1892,1896,1900,1904,1908,1912,1916,1920,1924,1928,1932,1936,1940,1944,1948,1952,1956,1960],
             datasets: [{

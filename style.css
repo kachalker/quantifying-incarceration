@@ -76,25 +76,16 @@ body {
     padding-bottom: 1%;
 }
 /* Maps */
-#map-container {
-    width: 100%;
-    padding-top: 2%;
+#map-page {
+    overflow-x: hidden;
 }
 .maps {
-    width: 46.8%;
-    height: 550px;
-    display: inline-block;
+    height: 600px;
+    z-index: 1;
+    width: 45%;
     max-width: 100%;
     max-height: 100%;
-    z-index: 1;
-    margin-bottom: 1%;
-}
-#map1 {
-    margin-left: 2%;
-    margin-right: 2%;
-}
-#map {
-    margin-right: 2%;
+    margin: 1% 0;
 }
 .info {
     padding: 6px 8px;
@@ -127,7 +118,7 @@ body {
     font-family: "Crimson Pro", serif;
 }
 .graph-desc {
-    margin: 2% 22% 1.5% 22%;
+    margin: 2% 22% 1% 22%;
     font-family: "Crimson Pro", serif;
     font-size: 18px;
     letter-spacing: -.3px;
@@ -257,11 +248,10 @@ body {
     .graph-heading {
         margin: 1% 2% 0% 2%;
     }
-}
-@media only screen and (max-width: 1285px) {
     .maps {
         display: block;
         width: 96%;
+        height: 520px;
     }
     #map1 {
         margin: 0% 2%;
@@ -269,6 +259,8 @@ body {
     #map {
         margin: 2% 2%;
     }
+}
+@media only screen and (max-width: 1285px) {
     .graph-desc {
         margin: 2% 5% 5% 5%;
         font-family: "Crimson Pro", serif;

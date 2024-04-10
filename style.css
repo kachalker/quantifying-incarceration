@@ -131,7 +131,6 @@ body {
 }
 #storyline iframe {
     margin-bottom: -2%;
-    padding: 1%;
 }
 #myChart, #myChart1 {
     margin: 2%;
@@ -236,6 +235,12 @@ body {
     }
     .graph-desc {
         font-size: 16px;
+    }
+    #other-graphs {
+        visibility: hidden;
+    }
+    #home-button {
+        visibility: hidden;
     }
 }
 @media only screen and (max-width: 1050px) {
